@@ -27,7 +27,7 @@ class TipController extends AppController {
 		
 		# paging.
 		$this->paginate = array(
-			'limit' => 3, 
+			'limit' => 5, 
 			'order' => array(
 				'Tip.sid' => 'desc',
 				'Tip.thread' => 'asc'
@@ -95,6 +95,8 @@ class TipController extends AppController {
 			$result = $this->Tip->find('all', array('fields'=>array('(MAX(sid)+1) as newsid')));
 			if ($result[0][0]['newsid'] === NULL ) {
 				$this->data['Tip']['sid']=1;
+			} else {
+				$this->data['Tip']['sid']=$result[0][0]['newsid'];
 			}
 			$this->data['Tip']['writer']='test';
 			$this->data['Tip']['ip_addr'] = $_SERVER['REMOTE_ADDR'];

@@ -1,6 +1,7 @@
 <?php
 $paging = $this->Paginator->params();
 $vid = intval($paging['count']) - (intval($paging['page']) - 1) * intval($paging['options']['limit']);
+$recent = mktime();
 ?>
 <!-- 본문 내용을 div 로 만든다. -->
 		<div id="content">
@@ -32,7 +33,7 @@ $vid = intval($paging['count']) - (intval($paging['page']) - 1) * intval($paging
 					<?php foreach($tips as $tip): ?>
 						<ul>
 							<li style="width:14px;"><?=$vid?></li>
-							<li style="width:524px;text-align:left"><?php if ($tip['Tip']['thread'] > 0) { ?><img src='/img/i_reply.gif'><?php } ?> <a href="/tip/view/<?=$tip['Tip']['id']?>/page:<?=$paging['page']?>"><?=$tip['Tip']['subject']?></a></li>
+							<li style="width:524px;text-align:left"><?php if ($tip['Tip']['thread'] > 0) { ?><img src='/img/i_reply.gif'><?php } ?> <a href="/tip/view/<?=$tip['Tip']['id']?>/page:<?=$paging['page']?>"><?=$tip['Tip']['subject']?></a><?php if(($recent - $tip['Tip']['wdate']) < 259200) { ?> <img src="/img/ico_n.gif" border="0"> <?php } ?></li>
 							<li style="width:105px;"><?=$tip['Tip']['writer']?></li>
 							<li style="width:115px;"><?=date('Y-m-d H:i:s', $tip['Tip']['wdate'])?></li>
 						</ul>

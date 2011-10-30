@@ -27,7 +27,7 @@ class TipController extends AppController {
 		
 		# paging.
 		$this->paginate = array(
-			'limit' => 5, 
+			'limit' => 15, 
 			'order' => array(
 				'Tip.sid' => 'desc',
 				'Tip.thread' => 'asc'

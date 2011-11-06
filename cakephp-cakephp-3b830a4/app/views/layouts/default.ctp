@@ -28,7 +28,7 @@ require_once "/usr/local/php/lib/php/header.php";
 		<li class="logo"><a href="/">{work}Portal </a></li>
 		<li><a href="/originservers">서버</a></li>
 		<li><a href="/tip">TIP</a></li>
-		<li><a href="#">글관리▼</a>
+		<li><a href="#">뉴스▼</a>
 			<ul>
 				<li><a href="#">글목록</a></li>
 				<li><a href="#">댓글</a></li>

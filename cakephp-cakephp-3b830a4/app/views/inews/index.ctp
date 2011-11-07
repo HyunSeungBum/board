@@ -23,7 +23,7 @@
 						<header>
 							<?=$html->link($feed->get_title(), $feed->get_permalink(), array('class' => 'rsslink', 'target' => '_blank'))?>
 						</header>
-						<div style="width:560px;">
+						<div style="width:765px;">
 							<?=$text->truncate($feed->get_description(),200)?><br /><br />
 							<p style="font-style:italic;"><?=$feed->get_date()?></p>
 						</div>

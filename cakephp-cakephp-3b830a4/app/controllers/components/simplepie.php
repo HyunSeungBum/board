@@ -14,6 +14,9 @@
 
 class SimplepieComponent extends Object {
   var $cache;
+  var $site;
+  var $siteLink;
+  var $siteDescription;
 
   function __construct() {
     $this->cache = CACHE . 'rss' . DS;
@@ -44,6 +47,13 @@ class SimplepieComponent extends Object {
     //retrieve the feed
     $feed->init();
 
+    $site = $feed->get_channel_tags('','title');
+    $this->site = $site['0']['data'];
+    $siteLink = $feed->get_channel_tags('','link');
+    $this->siteLink = $siteLink['0']['data'];
+    $siteDescription = $feed->get_channel_tags('','description');
+    $this->siteDescription = $siteDescription['0']['data'];
+
     //get the feed items
     $items = $feed->get_items();
 
@@ -53,6 +63,18 @@ class SimplepieComponent extends Object {
     } else {
       return false;
     }
+  }
+
+  function get_site() {
+	return $this->site;	
+  }
+
+  function get_siteLink() {
+	return $this->siteLink;	
+  }
+
+  function get_siteDescription() {
+	return $this->siteDescription;
   }
 }
 ?> 

@@ -13,17 +13,22 @@
 			</aside> 
 			<div id="mainContent"> 
 				<section id="blogHeader"> 
-					<h2><?=$cateTitle?></h2> 
+					<h2><?=$html->link($site,$siteLink,array('target'=>'_blank','alt'=>$siteDescription))?></h2> 
 				</section> 
 				<section id="blogContent">
 					<?php
 					foreach($feeds as $feed) {
-						  echo $html->link($feed->get_title(), $feed->get_permalink()) . '<br/>';
-						    echo $text->truncate($feed->get_description()).'<br />';
-						    echo $feed->get_date();
-						    echo '<br />';
-					}
 					?>
+					<article style="padding-bottom:10px;padding-left:10px;">
+						<header>
+							<?=$html->link($feed->get_title(), $feed->get_permalink(), array('class' => 'rsslink', 'target' => '_blank'))?>
+						</header>
+						<div style="width:560px;">
+							<?=$text->truncate($feed->get_description(),200)?><br /><br />
+							<p style="font-style:italic;"><?=$feed->get_date()?></p>
+						</div>
+					</article>
+					<?php } ?>
 				</section>
 			</div> 
 		</div>

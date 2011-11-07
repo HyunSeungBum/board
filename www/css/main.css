@@ -133,7 +133,6 @@ nav li > ul li a:hover {
     display: table;
     margin-top: -3px;
 	overflow: auto;
-	height: 100%;	
 }
 
 #mainContent {
@@ -334,9 +333,6 @@ aside section ul li a:hover {
 footer {
 	position: absolute;
 	left: 0;
-	width: 100%;
-	background: #222;
-	bottom: 0px;
 }
 
 footer div {

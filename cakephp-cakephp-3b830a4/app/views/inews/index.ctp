@@ -2,9 +2,9 @@
 		<div id="content">
 		<!-- aside는 본문내용에 부스러기 들을 넣는다. -->
 			<aside> 
-				<section> 
+				<section style="width:170px;"> 
 					<header> 
-						<h3>목록</h3> 
+						<h3><?=$sitGroup?></h3> 
 					</header> 
 					<ul> 
 					<?php

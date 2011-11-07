@@ -7,7 +7,13 @@
 						<h3>목록</h3> 
 					</header> 
 					<ul> 
-						<li><a href="/inews"></a></li> 
+					<?php
+					foreach($cates as $cate) {
+					?>
+						<li><a href="/inews/index/Inews.id:<?=$cate['Inews']['id']?>"><?=$cate['Inews']['site']?></a></li> 
+					<?php
+					}
+					?>
 					</ul> 
 				</section> 
 			</aside> 

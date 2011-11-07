@@ -440,3 +440,12 @@ input[type='submit']:hover, input[type='reset']:hover, button[type='button']:hov
 	background: #eef;
 }
 
+/*--------------------------------
+=Rss link
+--------------------------------*/
+.rsslink {
+	font-size:16px;
+	color: #E1604D;
+	font-weight: bolder;
+	text-decoration: none;
+}

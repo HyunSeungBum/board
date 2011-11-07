@@ -1,7 +1,8 @@
 /*--------------------------------
 =BASIC SETUP
 --------------------------------*/
-/* MakeShift CSS Reset */
+
+/* Makeshift CSS Reset */
 * {
 	margin: 0;
 	padding: 0;
@@ -9,12 +10,20 @@
 
 /* Tell the browser to render HTML 5 elements as block */
 header, footer, section, aside, nav, article {
-	display:block;
+	display: block;
+}
+
+p {
+	padding-bottom: 22px;
 }
 
 body {
+	margin: 0 auto;
+	padding: 42px 0;
 	font: 12px dotum, Helvetica, Arial, sans-serif;
+	height: 100%;
 }
+
 /*-------------------------------
 =NAVIGATION
 --------------------------------*/
@@ -123,12 +132,8 @@ nav li > ul li a:hover {
 #content {
     display: table;
     margin-top: -3px;
-	/*position: relative;*/
-	position: absolute;
 	overflow: auto;
-	height:90%;
-	top:42px;
-	bottom: 50px;
+	height: 100%;	
 }
 
 #mainContent {
@@ -290,6 +295,7 @@ aside {
 	display: table-cell;
 	width: 150px;
 	border-right: 2px solid #E2E2E2;
+	border-bottom: 2px solid #E2E2E2;
 	background: #FAFAFA;
 }
 
@@ -322,12 +328,55 @@ aside section ul li a:hover {
 	color:blue;
 }
 
+/*------------------------------
+=FOOTER
+------------------------------*/
 footer {
-    width: 100%;
 	position: absolute;
-	bottom: 0;
-	height: 50px;
-	background-color: #ccc;
+	left: 0;
+	width: 100%;
+	background: #222;
+	bottom: 0px;
+}
+
+footer div {
+	display: table;
+	margin: 0 auto;
+	padding: 44px 0;
+	width: 940px;
+	color: #777;
+}
+
+footer div section {
+	display: table-cell;
+	width: 300px;
+}
+
+footer div #about, footer div #blogroll {
+	padding-right: 20px;
+}
+	
+footer h3 {
+	color: #FFF;
+}
+
+footer a {
+	color: #999;
+}
+
+footer a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+footer ul {
+	margin: 0 0 0 40px;
+	list-style: square;
+	color: #565656;
+}
+
+footer ul li a {
+	display: block;
 }
 
 /*------------------------------
